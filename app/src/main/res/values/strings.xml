@@ -4,4 +4,5 @@
     <string name="main_activity">Main Activity</string>
     <string name="btn_return">Return</string>
     <string name="result_activity">Result Activity</string>
+    <string name="toast_isEmpty">EditText не может быть пустым</string>
 </resources>

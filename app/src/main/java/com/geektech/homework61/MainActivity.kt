@@ -23,10 +23,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnSend.setOnClickListener {
             val text: String = binding.editTextMain.text.toString()
             if (text.isEmpty()) {
-                Toast.makeText(this, "EditText не может быть пустым", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_isEmpty, Toast.LENGTH_SHORT).show()
             } else {
                 intentLauncher.launch(Intent(this, ResultActivity::class.java).apply {
-                    putExtra(key, text)
+                    putExtra(keyMaRa, text)
                 })
             }
         }
@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
     private val intentLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK)
-                binding.editTextMain.setText(result.data?.getStringExtra(ResultActivity.resultKey))
+                binding.editTextMain.setText(result.data?.getStringExtra(ResultActivity.keyRaMa))
         }
 
     companion object {
-        const val key: String = "main_key"
+        const val keyMaRa: String = "main_key"
     }
 }
 

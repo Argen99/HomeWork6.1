@@ -15,7 +15,7 @@ class ResultActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intent: Intent = getIntent()
-        val result: String? = intent.getStringExtra(MainActivity.key)
+        val result: String? = intent.getStringExtra(MainActivity.keyMaRa)
         binding.editTextResult.setText(result)
 
         initClickers()
@@ -25,10 +25,10 @@ class ResultActivity : AppCompatActivity() {
         binding.btnReturn.setOnClickListener {
             val text: String = binding.editTextResult.text.toString()
             if (text.isEmpty()) {
-                Toast.makeText(this, "EditText не может быть пустым", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.toast_isEmpty, Toast.LENGTH_SHORT).show()
             } else {
                 val data = Intent()
-                data.putExtra(resultKey, text)
+                data.putExtra(keyRaMa, text)
                 setResult(RESULT_OK, data)
                 finish()
             }
@@ -36,6 +36,6 @@ class ResultActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val resultKey: String = "key_result"
+        const val keyRaMa: String = "key_result"
     }
 }
